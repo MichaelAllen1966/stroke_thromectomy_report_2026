@@ -37,7 +37,7 @@
 \usepackage{placeins} % to use \FloatBarrier where want a hard break between content (to force and order of text and figures
 \usepackage[hidelinks]{hyperref}
 
-
+\renewcommand{\thefootnote}{\textit{\alph{footnote}}} % Lettered footnotes
 
 
 % Info on wordcounts:
@@ -73,10 +73,9 @@
 
 % Table of contents
 
+\input{chapters/1a_exec_summary}
 
 \tableofcontents
-
-
 
 \input{chapters/2_intro}
 \input{chapters/3_methods}
