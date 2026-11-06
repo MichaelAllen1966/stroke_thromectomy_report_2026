@@ -75,7 +75,11 @@
 
 \input{chapters/1a_exec_summary}
 
+\clearpage
+
 \tableofcontents
+
+
 
 \input{chapters/2_intro}
 \input{chapters/3_methods}
@@ -90,9 +94,17 @@
 
 \include{chapters/6_end_text}
 
-\clearpage
+\clearpage  % optional, but keeps floats from the main text out of the supplement
+
 \setcounter{section}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+
 \renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
+
+
 \include{chapters/7_supplement}
 
 \end{document}
