@@ -4,10 +4,10 @@
 
 We tested each IVT-only unit to estimate the potential gain from adding that unit as a single extra MT unit. The model predicted the catchment population of the new MT provision, as a sum of admissions to that unit and all surrounding IVT-only units where the new MT unit would be the closest (fast travel time) MT unit. The model also predicted the benefit to those patients. The total net benefit from adding each unit is the product of the catchment population and the benefit achieved to that population. Two units may have the same net benefit but one by having a smaller benefit over a larger population, and the other having a larger benefit over a smaller benefit. Table \ref{tab:hospital-benefit} shows the top 40 units as measured by the total net benefit. Figure \ref{fig:benefit_pareto} plots catchment population against benefit to that population, and the resulting net benefit.
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
 \small
-\caption{Estimated benefit by hospital location. Each hospital is tested as a single extra MT-unit in addition to current provision. The \textit{Admission Catchment Benefitting} is the catchment of that extra unit and all the IVT-only units that would likely use the new unit. \textit{The Mean Benefit} is the number of additional good outcomes (mRS 0-2 at 3-6 months) for 100 patients treated with MT at the new centre. The \textit{Relative Benefit} is the product of the Catchment and the Mean Benefit, scaled to the maximum benefit observed. Results show the hospitals in the top 40 relative benefit.}
+\caption{Estimated benefit by hospital location. Each hospital is tested as a single extra MT unit in addition to current provision. The \textit{Admission Catchment Benefitting} is the catchment of that extra MT unit and all the IVT-only units that would likely use the new MT unit. The \textit{Mean Benefit} is the number of additional good outcomes (mRS 0-2 at 3-6 months) for 100 patients treated with MT at the new MT unit. The \textit{Relative Benefit} is the product of the \textit{Admission Catchment Benefitting} and the \textit{Mean Benefit}, scaled to the maximum benefit observed. Results show the hospitals in the top 40 relative benefit.}
 \label{tab:hospital-benefit}
 \begin{tabular}{lrrr}
 \toprule
@@ -57,24 +57,23 @@ Carlisle            &  683 & 7.81 & 0.46 \\
 \end{tabular}
 \end{table}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.66\linewidth]{images/mt_unit_benefit_plot.png}
-    \caption{The benefit of adding a single new MT unit, chosen from current IVT-only units. The \textit{x-axis} shows catchment area (emergency stroke admissions per year) that would be redirected to the new MT-centre. The \textit{y-axis} shows the benefit redirected LVO patients would have if treated. Each point is sized and coloured by the net benefit (the product of the catchment area and the potential benefit for each person). The red line shows the \textit{Pareto front} where no other unit has both a better catchment and a better benefit per person.}
+    \caption{The benefit of adding a single new MT unit, chosen from current IVT-only units. The \textit{x-axis} shows catchment area (emergency stroke admissions per year) that would be redirected to the new MT unit. The \textit{y-axis} shows the benefit that redirected LVO patients would have if treated at the new MT unit (rather than at their current closest MT unit). Each point is sized and coloured by the net benefit (the product of the catchment area and the potential benefit for each person). The red line shows the \textit{Pareto front} where no other unit has both a larger catchment and a better benefit per person.}
     \label{fig:benefit_pareto}
 \end{figure}
 
-\clearpage
 
 \subsection{Target trial emulation on timing of thrombolysis and thrombectomy}
 
-In the SAMueL (Stroke Audit Machine Learning) project We performed a target trial on patients identified as having a large vessel occlusion, ir a stroke severity (NIHSS) of 11+. To emulate a clinical trial, we constructed comparable treatment and control groups by finding a matched untreated for each patient in each treatment group (with treatment groups based on the patient receiving IVT and/MT before or after 270 minutes from stroke onset). Patients were matched on features found to significantly affect outcome or probability of receiving thrombolysis or thrombectomy, namely prior disability, age group (5 year bands), stroke severity bands (NIHSS 0-4, 5-9, 10-14, \textit{et seq.}), Afib anti-coagulant, and Afib diagnosis. Non-matched treated patients (a maximum of 2.3\% of any treatment group) were dropped from the analysis to ensure common support between control and test groups.
+In the SAMueL (Stroke Audit Machine Learning) project we performed a target trial on patients identified as having an LVO, or a stroke severity (NIHSS) of 11+. To emulate a clinical trial, we constructed comparable treatment and control groups by finding a matched untreated patient for each treated patient. Patients were matched on features found to significantly affect outcome or probability of receiving thrombolysis or thrombectomy, namely prior disability, age group (5 year bands), stroke severity bands (NIHSS 0-4, 5-9, 10-14, \textit{et seq.}), atrial fibrillation anti-coagulant, and atrial fibrillation diagnosis. Treated patients were assigned to one of n [5 or 7?] treatment groups, based on treatment received, and time of treatment. A treated patient received at least one of IVT and MT, with treatment being given early (within 270 minutes from stroke onset) or late (beyond 270 minutes from stroke onset). When both treatments are given, IVT is received before MT. Non-matched treated patients were dropped from the analysis to ensure common support between control and test groups (the maximum dropped was 2.3\% of any treatment group).
 
 Each treatment group had its own untreated control matched group. Discharge with disability was then compared between control and treated patients in each treatment group. 
 
-Figure \ref{fig:main_target_trial_mrs_2} shows the differences between control and treated groups for each treatment group of early or late thrombolysis and thrombectomy. Early (treatment given $\leq$ 270 minutes after stroke onset) combined thrombolysis and thrombectomy had the greatest estimated benefit, followed by early thrombolysis alone. Early thrombectomy alone had significant benefit, but less than combined treatment or thrombolysis alone. Late thrombolysis alone ($>$ 270 minutes after stroke onset) had reduced benefit, but late thrombectomy , with or without thrombolysis, appeared to have little benefit.
+Figure \ref{fig:main_target_trial_mrs_2} shows the differences between control and treated groups for each treatment group of early or late IVT and MT. Early (treatment given $\leq$ 270 minutes after stroke onset) combined IVT and MT had the greatest estimated benefit, followed by early IVT alone. Early MT alone had significant benefit, but less than combined treatment or IVT alone. Late IVT alone ($>$ 270 minutes after stroke onset) had reduced benefit, but late MT, with or without thrombolysis, appeared to have little benefit.
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{images/non_mild_stroke_early_arrival_good_outcome_target_trial.png}
     \caption{Target trial emulation of reperfusion-treatment timing strategies and discharge functional outcomes, using matched control and treated patients. Estimated mean discharge modified Rankin Scale (mRS; left panel), proportion achieving an outcome of mRS 0–2 (middle panel), and length of stay (right panel) are shown for patients receiving each treatment strategy (red) and their matched untreated comparators (blue). Strategies are defined by early ($\leq$ 270 mins from onset) or late ($>$ 270 mins from onset) intravenous thrombolysis, mechanical thrombectomy, or their combination. Points denote estimated outcomes and horizontal bars 95\% confidence intervals; p-values indicate the treated–untreated comparison within each treatment group, with sample sizes shown. Lower mRS and higher mRS 0–2 proportions indicate more favourable outcomes.}
