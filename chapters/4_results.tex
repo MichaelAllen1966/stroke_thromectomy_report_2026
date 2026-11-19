@@ -48,13 +48,13 @@ Improvement in outcomes is not even across the population who may benefit. The b
     \toprule
     IVT location & No MT loss & 33\% MT loss \\
     \midrule
-    Taunton     & 7.13 & 8.11 \\
-    Worcester   & 5.55 & 7.13 \\
-    Hereford    & 1.51 & 1.01 \\
-    Barnstaple  & 1.43 & 0.96 \\
-    Exeter      & 1.04 & 0.69 \\
-    Cheltenham  & 0.92 & 0.62 \\
-    Dorchester  & 0.05 & 0.04 \\
+    Taunton & 7.12 & 8.10 \\
+    Worcester & 5.55 & 7.13 \\
+    Hereford & 1.52 & 1.02 \\
+    Barnstaple & 1.43 & 0.96 \\
+    Exeter & 1.03 & 0.69 \\
+    Cheltenham & 0.92 & 0.62 \\
+    Dorchester & 0.06 & 0.04 \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -66,7 +66,7 @@ Figures \ref{fig:map_current_no_loss} to \ref{fig:map_new_lossy} show maps of th
 % Base case
 \begin{figure}[H]
 \centering
-\includegraphics[width=\linewidth]{images/map_three_in_one_current_hospitals_lvo.png} 
+\includegraphics[width=\linewidth]{images/map_three_in_one_base_lvo.png} 
 \caption{Modelled times and outcomes for stroke patients with large vessel occlusion receiving thrombolysis (IVT) and thrombectomy (MT), with current IVT/MT provision (Taunton and Worcester as IVT-only units) and no loss of MT by first attending an IVT-only unit. \textit{Left}: Predicted travel times to closest (in time) IVT unit. \textit{Middle}: Total travel time to MT unit; this includes travel time to closest IVT unit, a net delay before transfer of 60 minutes, and travel time from IVT unit to MT unit. \textit{Right}: The predicted improvement in the proportion of treated LVO patients with mRS 0-2 at 3-6 months, assuming there is no loss of use of MT by first attending an IVT-only unit. Stroke teams are shown as stars (providing both IVT and MT) or circles (providing IVT alone).}
 \label{fig:map_current_no_loss}
 \end{figure}
@@ -74,7 +74,7 @@ Figures \ref{fig:map_current_no_loss} to \ref{fig:map_new_lossy} show maps of th
 % Base case - loss pf MT
 \begin{figure}[H]
 \centering
-\includegraphics[width=\linewidth]{images/map_three_in_one_current_hospitals_67_percent_transfer_lvo.png} 
+\includegraphics[width=\linewidth]{images/map_three_in_one_lossydripship_base_lvo.png} 
 \caption{Modelled times and outcomes for stroke patients with large vessel occlusion receiving thrombolysis (IVT) and thrombectomy (MT), with current IVT/MT provision (Taunton and Worcester as IVT-only units) and 33\% loss of use of MT by first attending an IVT-only unit. \textit{Left}: Predicted travel times to closest (in time) IVT unit. \textit{Middle}: Total travel time to MT unit; this includes travel time to closest IVT unit, a net delay before transfer of 60 minutes, and travel time from IVT unit to MT unit. \textit{Right}: The predicted improvement in the proportion of treated LVO patients with mRS 0-2 at 3-6 months, assuming a 33\% loss of use of MT by first attending an IVT-only unit. Stroke teams are shown as stars (providing both IVT and MT) or circles (providing IVT alone).}
 \label{fig:map_current_lossy}
 \end{figure}
@@ -84,7 +84,7 @@ Figures \ref{fig:map_current_no_loss} to \ref{fig:map_new_lossy} show maps of th
 % Worcester + Taunton
 \begin{figure}[H]
 \centering
-\includegraphics[width=\linewidth]{images/map_three_in_one_taunton_and_worcester_lvo.png}  
+\includegraphics[width=\linewidth]{images/map_three_in_one_taunworc_lvo.png}  
 \caption{Modelled times and outcomes for stroke patients with large vessel occlusion receiving thrombolysis (IVT) and thrombectomy (MT), with planned IVT/MT provision (additional MT units at Taunton and Worcester) and no loss of MT by first attending an IVT-only unit. \textit{Left}: Predicted travel times to closest (in time) IVT unit. \textit{Middle}: Total travel time to MT unit; this includes travel time to closest IVT unit, a net delay before transfer of 60 minutes, and travel time from IVT unit to MT unit. \textit{Right}: The predicted improvement in the proportion of treated LVO patients with mRS 0-2 at 3-6 months, assuming there is no loss of use of MT by first attending an IVT-only unit. Stroke teams are shown as stars (providing both IVT and MT) or circles (providing IVT alone).}
 \label{fig:map_new_no_loss}
 \end{figure}
@@ -92,7 +92,7 @@ Figures \ref{fig:map_current_no_loss} to \ref{fig:map_new_lossy} show maps of th
 % Worcester + Taunton - loss pf MT
 \begin{figure}[H]
 \centering
-\includegraphics[width=\linewidth]{images/map_three_in_one_taunton_and_worcester_67_percent_transfer_lvo.png} 
+\includegraphics[width=\linewidth]{images/map_three_in_one_lossydripship_taunworc_lvo.png} 
 \caption{Modelled times and outcomes for stroke patients with large vessel occlusion receiving thrombolysis (IVT) and thrombectomy (MT), with planned IVT/MT provision (additional MT units at Taunton and Worcester) and 33\% loss of use of MT by first attending an IVT-only unit. \textit{Left}: Predicted travel times to closest (in time) IVT unit. \textit{Middle}: Total travel time to MT unit; this includes travel time to closest IVT unit, a net delay before transfer of 60 minutes, and travel time from IVT unit to MT unit. \textit{Right}:  The predicted improvement in the proportion of treated LVO patients with mRS 0-2 at 3-6 months, assuming a 33\% loss of use of MT by first attending an IVT-only unit. Stroke teams are shown as stars (providing both IVT and MT) or circles (providing IVT alone).}
 \label{fig:map_new_lossy}
 \end{figure}
@@ -103,14 +103,14 @@ Figures \ref{fig:map_current_no_loss} to \ref{fig:map_new_lossy} show maps of th
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{images/comparison_map_three_in_one_taunton_worcester.png}
+    \includegraphics[width=1\linewidth]{images/comparison_map_three_in_one_taunworc.png}
     \caption{Comparison of travel times for MT (including non-travel delays) and outcomes (the predicted improvement in the proportion of treated LVO patients with mRS 0-2 at 3-6 months) by adding MT capability at Taunton and Worcester, with no loss of MT by first attending an IVT-only unit. The arrows indicate the modelled transfer destination from IVT-only units. \textit{Left}: Current predicted travel times for MT, \textit{Middle}: Improvement in travel time to MT. \textit{Right}: Improvement in outcomes.}
     \label{fig:comparison_three_in_one}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{images/comparison_map_three_in_one_taunton_worcester_67_percent_transfer.png}
+    \includegraphics[width=1\linewidth]{images/comparison_map_three_in_one_lossydripship_taunworc.png}
     \caption{Comparison of travel times for MT (including non-travel delays) and outcomes (the predicted improvement in the proportion of treated LVO patients with mRS 0-2 at 3-6 months) by adding MT capability at Taunton and Worcester, with 33\% loss of MT by first attending an IVT-only unit. The arrows indicate the modelled transfer destination from IVT-only units. \textit{Left}: Current predicted travel times for MT, \textit{Middle}: Improvement in travel time to MT. \textit{Right}: Improvement in outcomes.}
     \label{fig:comparison_three_in_one_lossy}
 \end{figure}
@@ -129,12 +129,13 @@ Table \ref{tab:mt_units} shows the effect of adding MT units at Taunton and Worc
 \hline
 \textbf{MT Unit} & \textbf{Current MT*} & \textbf{Planned MT*} & \textbf{Change} \\
 \hline
-Birmingham    & 707 & 585 & $-122$ \\
-North Bristol & 393 & 219 & $-174$ \\
-Plymouth      & 341 & 231 & $-110$ \\
-Southampton**   & 558 & 488 & $-70$  \\
-Taunton**     & 0   & 273 & 273    \\
-Worcester     & 0   & 202 & 202    \\
+Birmingham & 711 & 589 & $-$122 \\
+Southampton** & 560 & 491 & $-$69 \\
+North Bristol & 394 & 220 & $-$174 \\
+Coventry & 384 & 384 & 0 \\
+Plymouth & 341 & 232 & $-$109 \\
+Taunton** & 0 & 272 & 272 \\
+Worcester & 0 & 202 & 202 \\
 \hline
 \end{tabular}
 
@@ -168,14 +169,14 @@ With the addition of Taunton and Worcester as MT units, a summary of key results
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{images/map_three_in_one_current_hospitals_10min_travel_bias_lvo.png}
+    \includegraphics[width=1\linewidth]{images/map_three_in_one_base_bias10min_lvo.png}
     \caption{Modelled times and outcomes for stroke patients with large vessel occlusion receiving thrombolysis (IVT) and thrombectomy (MT), with current IVT/MT provision (Taunton and Worcester as IVT-only units), no loss of MT by first attending an IVT-only unit, and with patients being taken to an MT unit if travel time is no longer than 10 minutes more than first attending a closer IVT-only unit. \textit{Left}: Predicted travel times to closest (in time) IVT unit. \textit{Middle}: Total travel time to MT unit; this includes travel time to closest IVT unit, a net delay before transfer of 60 minutes, and travel time from IVT unit to MT unit. \textit{Right}: The predicted improvement in the proportion of treated LVO patients with mRS 0-2 at 3-6 months, assuming there is no loss of use of MT by first attending an IVT-only unit. Stroke teams are shown as stars (providing both IVT and MT) or circles (providing IVT alone).}
     \label{fig:map_current_bias}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{images/map_three_in_one_taunton_and_worcester_10min_bias_lvo.png}
+    \includegraphics[width=1\linewidth]{images/map_three_in_one_taunworc_bias10min_lvo.png}
     \caption{Modelled times and outcomes for stroke patients with large vessel occlusion receiving thrombolysis (IVT) and thrombectomy (MT), with planned IVT/MT provision (additional MT units at Taunton and Worcester), no loss of MT by first attending an IVT-only unit, and with patients being taken to an MT unit if travel time is no longer than 10 minutes more than first attending a closer IVT-only unit. \textit{Left}: Predicted travel times to closest (in time) IVT unit. \textit{Middle}: Total travel time to MT unit; this includes travel time to closest IVT unit, a net delay before transfer of 60 minutes, and travel time from IVT unit to MT unit. \textit{Right}: The predicted improvement in the proportion of treated LVO patients with mRS 0-2 at 3-6 months, assuming there is no loss of use of MT by first attending an IVT-only unit. Stroke teams are shown as stars (providing both IVT and MT) or circles (providing IVT alone).}
     \label{fig:map_taunton_worcester_bias}
 \end{figure}
