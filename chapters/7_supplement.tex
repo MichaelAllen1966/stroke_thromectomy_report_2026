@@ -2,12 +2,12 @@
 
 \subsection{Selection of potential new MT units by net benefit}
 
-We tested each IVT-only unit to estimate the potential gain from adding that unit as a single extra MT unit. The model predicted the catchment population of the new MT provision, as a sum of admissions to that unit and all surrounding IVT-only units where the new MT unit would be the closest (fast travel time) MT unit. The model also predicted the benefit to those patients. The total net benefit from adding each unit is the product of the catchment population and the benefit achieved to that population. Two units may have the same net benefit but one by having a smaller benefit over a larger population, and the other having a larger benefit over a smaller benefit. Table \ref{tab:hospital-benefit} shows the top 40 units as measured by the total net benefit. Figure \ref{fig:benefit_pareto} plots catchment population against benefit to that population, and the resulting net benefit.
+We tested each ASC to estimate the potential gain from adding that unit as a single extra MT unit. The model predicted the catchment population of the new MT provision, as a sum of admissions to that unit and all surrounding ASCs where the new MT unit would be the closest (fastest travel time) CSC. The model also predicted the benefit to those patients. The total net benefit from adding each unit is the product of the catchment population and the benefit achieved to that population. Two units may have the same net benefit but one by having a smaller benefit over a larger population, and the other having a larger benefit over a smaller population. Table \ref{tab:hospital-benefit} shows the top 40 units as measured by the total net benefit. Figure \ref{fig:benefit_pareto} plots catchment population against benefit to that population, and the resulting net benefit.
 
 \begin{table}[H]
 \centering
 \small
-\caption{Estimated benefit by hospital location. Each hospital is tested as a single extra MT unit in addition to current provision. The \textit{Admission Catchment Benefitting} is the catchment of that extra MT unit and all the IVT-only units that would likely use the new MT unit. The \textit{Mean Benefit} is the number of additional good outcomes (mRS 0-2 at 3-6 months) for 100 patients treated with MT at the new MT unit. The \textit{Relative Benefit} is the product of the \textit{Admission Catchment Benefitting} and the \textit{Mean Benefit}, scaled to the maximum benefit observed. Results show the hospitals in the top 40 relative benefit.}
+\caption{Estimated benefit by hospital location. Each hospital is tested as a single extra MT unit in addition to current provision. The \textit{Admission Catchment Benefiting} is the catchment of that extra MT unit and all the ASCs that would likely use the new MT unit. The \textit{Mean Benefit} is the number of additional good outcomes (mRS 0--2 at 3--6 months) for 100 patients treated with MT at the new MT unit. The \textit{Relative Benefit} is the product of the \textit{Admission Catchment Benefiting} and the \textit{Mean Benefit}, scaled to the maximum benefit observed. Results show the hospitals in the top 40 relative benefit.}
 \label{tab:hospital-benefit}
 \begin{tabular}{lrrr}
 \toprule
@@ -60,7 +60,7 @@ Carlisle & 683 & 7.76 & 0.46 \\
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.66\linewidth]{images/mt_unit_benefit_plot.png}
-    \caption{The benefit of adding a single new MT unit, chosen from current IVT-only units. The \textit{x-axis} shows catchment area (emergency stroke admissions per year) that would be redirected to the new MT unit. The \textit{y-axis} shows the benefit that redirected LVO patients would have if treated at the new MT unit (rather than at their current closest MT unit). Each point is sized and coloured by the net benefit (the product of the catchment area and the potential benefit for each person). The red line shows the \textit{Pareto front} where no other unit has both a larger catchment and a better benefit per person.}
+    \caption{The benefit of adding a single new MT unit, chosen from current ASCs. The \textit{x-axis} shows catchment area (emergency stroke admissions per year) that would be redirected to the new MT unit. The \textit{y-axis} shows the benefit that redirected LVO patients would have if treated at the new MT unit (rather than at their current closest CSC). Each point is sized and coloured by the net benefit (the product of the catchment area and the potential benefit for each person). The red line shows the \textit{Pareto front} where no other unit has both a larger catchment and a better benefit per person.}
     \label{fig:benefit_pareto}
 \end{figure}
 
@@ -71,12 +71,12 @@ Table~\ref{tab:mt_units_all} shows the numbers of MT admissions including patien
 \begin{landscape}
 \begin{table}[htbp]
     \centering
-    \caption{Current and planned mechanical thrombectomy (MT) activity by MT unit, including additional MT units at Taunton and Worcester (``Planned MT''). All numbers assume 10\% of all stroke receive MT. 100\% transfer assuming there was no loss of chance to receive MT by first attending an IVT-only unit, and 67\% transfer assumes that 67\% of patients receive MT when first attending an IVT-only unit. Numbers are printed in bold when the unit has fewer than 150 annual admissions for thrombectomy.}
+    \caption{Current and planned mechanical thrombectomy (MT) activity by MT unit, including additional MT units at Taunton and Worcester (``Planned MT''). All numbers assume 10\% of all stroke receive MT. 100\% transfer assuming there was no loss of chance to receive MT by first attending an ASC, and 67\% transfer assumes that 67\% of patients receive MT when first attending an ASC. Numbers are printed in bold when the unit has fewer than 150 annual admissions for thrombectomy.}
     \label{tab:mt_units_all}
     \begin{tabular}{ll|rrr|rrr}
     \hline
      &  & & 100\% transfer & & & 67\% transfer & \\
-    SSNAP Region & MT Unit & Current MT & Planned MT & Change & Current MT & Planned MT & Change \\
+    SSNAP Region & CSC & Current MT & Planned MT & Change & Current MT & Planned MT & Change \\
     \hline
     Buckinghamshire, Oxford and Berkshire & Oxford & 310 & 310 & 0 & 234 & 234 & 0 \\
     Cheshire and Mersey & Aintree & 400 & 400 & 0 & 320 & 320 & 0 \\
@@ -110,19 +110,3 @@ Table~\ref{tab:mt_units_all} shows the numbers of MT admissions including patien
     \end{tabular}
 \end{table}
 \end{landscape}
-
-
-\subsection{Target trial emulation on timing of thrombolysis and thrombectomy}
-
-In the SAMueL (Stroke Audit Machine Learning) project we performed a target trial on patients identified as having an LVO, or a stroke severity (NIHSS) of 11+. To emulate a clinical trial, we constructed comparable treatment and control groups by finding a matched untreated patient for each treated patient. Patients were matched on features found to significantly affect outcome or probability of receiving thrombolysis or thrombectomy, namely prior disability, age group (5 year bands), stroke severity bands (NIHSS 0-4, 5-9, 10-14, \textit{et seq.}), atrial fibrillation anti-coagulant, and atrial fibrillation diagnosis. Treated patients were assigned to one of 7 treatment groups, based on the treatment received (IVT only, MT only, or both), and the time that treatment is received (early is within 270 minutes from stroke onset, or late is beyond 270 minutes from stroke onset). When both treatments are given, IVT is received before MT. Non-matched treated patients were dropped from the analysis to ensure common support between control and test groups (the maximum dropped was 2.3\% of any treatment group).
-
-Each treatment group had its own untreated control matched group. Discharge with disability was then compared between control and treated patients in each treatment group. 
-
-Figure \ref{fig:main_target_trial_mrs_2} shows the differences between control and treated groups for each of the 7 treatment groups (early or late IVT and/or MT). Early (treatment given $\leq$ 270 minutes after stroke onset) combined IVT and MT had the greatest estimated benefit, followed by early IVT alone. Early MT alone had significant benefit, but less than combined treatment or IVT alone. Late IVT alone ($>$ 270 minutes after stroke onset) had reduced benefit, but late MT, with or without thrombolysis, appeared to have little benefit.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\linewidth]{images/non_mild_stroke_early_arrival_good_outcome_target_trial.png}
-    \caption{Target trial emulation of reperfusion-treatment timing strategies and discharge functional outcomes, using matched control and treated patients. Estimated mean discharge modified Rankin Scale (mRS; left panel), proportion achieving an outcome of mRS 0–2 (middle panel), and length of stay (right panel) are shown for patients receiving each treatment strategy (red) and their matched untreated comparators (blue). Strategies are defined by early ($\leq$ 270 mins from onset) or late ($>$ 270 mins from onset) intravenous thrombolysis, mechanical thrombectomy, or their combination. Points denote estimated outcomes and horizontal bars 95\% confidence intervals; p-values indicate the treated–untreated comparison within each treatment group, with sample sizes shown. Lower mRS and higher mRS 0–2 proportions indicate more favourable outcomes.}
-    \label{fig:main_target_trial_mrs_2}
-\end{figure}
